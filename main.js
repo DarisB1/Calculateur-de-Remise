@@ -10,7 +10,7 @@ function calculerMontantTotal(montantInitial, typeRemise) {
     const etudiant = 15;
     const soldes = 20;
     const fidélité = 10;
-    const inconnu = 15;
+
     if(montantInitial < 0) { 
         alert("Le montant initial ne peut pas être négatif.");
 
@@ -30,15 +30,14 @@ function calculerMontantTotal(montantInitial, typeRemise) {
     }else if(typeRemise == "aucune") {
         console.log(montantInitial);
 
-    }else if(typeRemise == "inconnu") {
-        alert("Type de remise inconnu.");
-
     }else if(typeRemise == "etudiant") {
         typeRemise = etudiant;
         let formule = typeRemise * montantInitial  / 100;
         let result = montantInitial - formule;
         console.log(result);
-        
+
+    }else if (typeRemise != "etudiant" && typeRemise != "soldes" && typeRemise != "fidélité" && typeRemise != "aucune") {
+        alert("Type de remise inconnu.")
     }
 }
 
